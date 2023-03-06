@@ -133,4 +133,4 @@ signal(mutex)
 
 #### Explanation
 
-The previous code suffered from starvation because even though a writer is waiting , new readers when came were allowed to move forward. So here we remedy that by adding an additional binary semaphore Q (assumed to have FIFO scheduling) which maintains the queus of processes in order.Here as soon as they start , they are waited on Q , hence maintainig the order. Note that when a writer is waiting and a reader comes, the reader would have to wait as Q is acquired by the writer process , hence bringing readers and writers on same priority.
+The previous code suffered from starvation because even though a writer is waiting , new readers when came were allowed to move forward. So here we remedy that by adding an additional binary semaphore Q (assumed to have FIFO scheduling) which maintains the queue of processes in order.Here as soon as they start , they are waited on Q , hence maintainig the order. Note that when a writer is waiting and a reader comes, the reader would have to wait as Q is acquired by the writer process , hence bringing readers and writers on same priority.
