@@ -1,0 +1,15 @@
+wait(Q)                           //wait in queue
+wait(mutex)	                  //exclusive access to critical section
+signal(Q)
+
+/* 
+.
+.
+.
+	Critical Section
+.
+.
+.
+*/
+
+signal(mutex)

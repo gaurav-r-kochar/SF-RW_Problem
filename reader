@@ -1,0 +1,23 @@
+wait(Q)                              // wait in queue 
+wait(readmutex)                      // exclusive access to readcount
+readcount++
+if (readcount == 1)
+	wait(mutex)                  //first reader,exclusive access of critical section to readers free from queue
+signal(Q)
+signal(readmutex)
+
+/* 
+.
+.
+.
+	Critical Section
+.
+.
+.
+*/
+
+wait(readmutex)                      //exclusive access to readcount
+readcount--
+if (readcount == 0)
+	signal(mutex)
+signal(readmutex)	 
